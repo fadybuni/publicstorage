@@ -7,6 +7,7 @@ public class App {
 		
 		LoginPage loginpage = new LoginPage(idandpasswords.getLoginInfo());
 
+        // Sleep for 300 seconds
         Thread.sleep(30000);
     }
 }
