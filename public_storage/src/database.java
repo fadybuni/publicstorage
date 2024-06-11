@@ -4,6 +4,7 @@ import java.sql.*;
 public class database {
 
     private String[] getCustomerInfo(int customerID)
+    //This is the information for linking the database.
         {
             String connectionUrl = "jdbc:mysql://localhost:3306/publicstorage2";
             String[] CustomerName = new String[4];
