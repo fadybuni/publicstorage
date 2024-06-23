@@ -1,4 +1,4 @@
-
+import java.util.List;
 
 class roomDimensions
 {
@@ -11,6 +11,12 @@ class roomDimensions
         depth = dimensions[1];
         height = dimensions[2];
     }
+}
+
+class availableRoom
+{
+    int roomNumber = 0;
+    int roomSize = 0;
 }
 
 class item
@@ -176,6 +182,20 @@ public class database
     // ******************************************************************************************
 
     // Check Available Rooms (Return a list of rooms that aren't assigned to a customer)
+    // Inputs: room size (1 integer); 0=return all room sizes, 1=return small rooms, 2=return medium rooms, 3=return large rooms
+    // Outputs: A list of availble rooms (object: room number (integer) and room size (integer) )
+    public List<availableRoom> getAvailableRooms(int roomSize) {
+
+        // check that the roomSize entry is valid
+        if (roomSize < 0 || roomSize > 3)
+        {
+            roomSize = 0; // Just return all room sizes
+        }
+        // Get rooms
+        List<availableRoom> availableRooms = sql_connection.getAvailableRooms(roomSize);
+        return availableRooms;
+    }
+
 
     // Assign customer to Room
 
@@ -185,6 +205,7 @@ public class database
     // Create the database
     database()
     {
+        // Create the SQL object
         sql_connection = new SQL_Connection();
     }
 }

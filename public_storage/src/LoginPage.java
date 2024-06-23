@@ -76,9 +76,7 @@ public class LoginPage implements ActionListener
 				String msg = "Password does not match! Please try again.";
 				JOptionPane.showMessageDialog(frame, msg);
 			}
-			
       	}
-
 	}
 }
 		

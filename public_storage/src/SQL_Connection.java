@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQL_Connection 
 {
@@ -175,6 +177,38 @@ public class SQL_Connection
             items = new item[1];
         }
         return items;
+    }
+
+    // Return a list of available rooms and their sizes
+    List<availableRoom> getAvailableRooms(int roomSize)
+    {
+        List<availableRoom> availableRooms = new ArrayList<availableRoom>(); // create list
+        ResultSet rs;
+        String query;
+        // Check room size
+        if (roomSize > 0)
+        {
+            query = "SELECT idroom, room_size FROM room WHERE room_size = "+roomSize+" and customer_id = 0 or room_size = "+roomSize+" and customer_id is NULL;";
+        }
+        else // return all room sizes
+        {
+            query = "SELECT idroom, room_size FROM room WHERE customer_id = 0 or customer_id is NULL;";
+        }
+        
+        try {
+            rs = stmt.executeQuery(query);
+            int i = 0;
+            while (rs.next()) {
+                availableRoom unassignedRoom = new availableRoom();
+                unassignedRoom.roomNumber = rs.getInt("idroom");
+                unassignedRoom.roomSize = rs.getInt("room_size");
+                availableRooms.add(i, unassignedRoom);
+                i++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return availableRooms;
     }
 
     // Add customer to database
