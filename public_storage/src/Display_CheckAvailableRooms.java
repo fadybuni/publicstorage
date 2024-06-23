@@ -4,11 +4,9 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class CheckAvailableRooms extends Frame implements ActionListener
+public class Display_CheckAvailableRooms extends Frame implements ActionListener
 {
     JButton exitButton = new JButton("Exit");
     JButton viewAvailableRoomButton = new JButton("View Available Rooms");
@@ -17,7 +15,7 @@ public class CheckAvailableRooms extends Frame implements ActionListener
     
     database db = new database();
 
-    CheckAvailableRooms()
+    Display_CheckAvailableRooms()
     {
         this.setLayout(null);
 
@@ -69,7 +67,7 @@ public class CheckAvailableRooms extends Frame implements ActionListener
         // Exit Button (go back to login screen)
         if (e.getSource() == exitButton) 
 		{
-            MainPage mainPage = new MainPage();
+            Display_MainPage mainPage = new Display_MainPage();
 			mainPage.setTitle("Main Page");
 			mainPage.setSize(800, 600);
 			mainPage.setVisible(true);

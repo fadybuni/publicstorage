@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class LoginPage implements ActionListener 
+public class Display_LoginPage implements ActionListener 
 {
 	JFrame frame = new JFrame();
 	JFrame signupPage;
@@ -23,7 +23,7 @@ public class LoginPage implements ActionListener
 
 	HashMap<String,String> logininfo = new HashMap<String,String>();
 	
-	LoginPage(HashMap<String,String> loginInfoOriginal)
+	Display_LoginPage(HashMap<String,String> loginInfoOriginal)
 	{
 		logininfo = loginInfoOriginal;
 		userIDLabel.setBounds(50,100,75,25);
@@ -65,7 +65,7 @@ public class LoginPage implements ActionListener
 			// Check if employee typed in the correct password
 			if (employeeLoggingIn.password.equals(userTyped_Password))
 			{
-				MainPage mainPage = new MainPage();
+				Display_MainPage mainPage = new Display_MainPage();
 				mainPage.setTitle("Main Page");
 				mainPage.setSize(800, 600);
 				mainPage.setVisible(true);
