@@ -6,7 +6,7 @@ import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPasswordField;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class LoginPage implements ActionListener 
@@ -16,7 +16,7 @@ public class LoginPage implements ActionListener
 	JButton loginButton = new JButton("Login");
 	JButton signupButton = new JButton("Sign Up");
 	JTextField userIDField = new JTextField();
-	JPasswordField userPasswordField = new JPasswordField();
+	JTextField userPasswordField = new JTextField();
 	JLabel userIDLabel = new JLabel("ID:");
 	JLabel userPasswordLabel = new JLabel("Password:");
 	JLabel messageLabel = new JLabel("This is a test");
@@ -57,14 +57,26 @@ public class LoginPage implements ActionListener
 		// Login Button	
 		if(e.getSource()==loginButton) 
 		{
-			database db = new database();
-			employee employeeLoggingIn = db.getEmployeeInfo(0);
-			//if (employeeLoggingIn.password = true)
-			MainPage mainPage = new MainPage();
-			mainPage.setTitle("Main Page");
-			mainPage.setSize(800, 600);
-			mainPage.setVisible(true);
-			this.frame.dispose();
+			database db = new database(); // create database object
+			int userTyped_ID = Integer.parseInt(userIDField.getText()); // get user ID
+			String userTyped_Password = userPasswordField.getText(); // get user Password
+			employee employeeLoggingIn = db.getEmployeeInfo(userTyped_ID); // get Password stored on database
+
+			// Check if employee typed in the correct password
+			if (employeeLoggingIn.password.equals(userTyped_Password))
+			{
+				MainPage mainPage = new MainPage();
+				mainPage.setTitle("Main Page");
+				mainPage.setSize(800, 600);
+				mainPage.setVisible(true);
+				this.frame.dispose();
+			}
+			else
+			{
+				String msg = "Password does not match! Please try again.";
+				JOptionPane.showMessageDialog(frame, msg);
+			}
+			
       	}
 
 	}
