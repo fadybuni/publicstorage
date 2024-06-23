@@ -1,11 +1,9 @@
-import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MainPage extends Frame implements ActionListener
@@ -16,9 +14,6 @@ public class MainPage extends Frame implements ActionListener
     JButton exitButton = new JButton("Exit");
     // Get Available Rooms
     JButton viewAvailableRoomButton = new JButton("View Available Rooms");
-    JTextField viewAvailableRmSizeField = new JTextField();
-    JLabel viewAvailableRmLabel= new JLabel();
-    JPanel availableRoomPanel = new JPanel();
 
     // Add User
     JButton addUserButton = new JButton("Add Client");
@@ -79,7 +74,6 @@ public class MainPage extends Frame implements ActionListener
         lastNameField.setBounds(150, 150, 200, 25);
         emailField.setBounds(150, 200, 200, 25);
         phoneField.setBounds(150, 250, 200, 25);
-        viewAvailableRmSizeField.setBounds(300, 400, 25, 25);
         itemField.setBounds(150, 100, 200, 25);
 
         /////////////////////////////////////////////////////////////////////
@@ -92,7 +86,6 @@ public class MainPage extends Frame implements ActionListener
         phoneLabel.setBounds(50, 250, 100, 25);
         roomLabel.setBounds(50, 50, 100, 25);
         itemLabel.setBounds(50, 100, 100, 25);
-        viewAvailableRmLabel.setBounds(50, 450, 200, 125);
 
         // Add GUI items to Frame
         this.add(exitButton);
@@ -109,9 +102,6 @@ public class MainPage extends Frame implements ActionListener
         this.add(phoneField);
         this.add(emailField);
         this.add(viewAvailableRoomButton);
-        this.add(viewAvailableRmLabel);
-        this.add(viewAvailableRmSizeField);
-        this.add(availableRoomPanel);
         this.setLayout(null);
         this.setVisible(true); 
     }
@@ -131,23 +121,11 @@ public class MainPage extends Frame implements ActionListener
         // View Available Rooms
         if (e.getSource() == viewAvailableRoomButton)
         {
-            String roomSizeInput = viewAvailableRmSizeField.getText();
-			int roomSize = Integer.parseInt(roomSizeInput);
-            List<availableRoom> roomsForRent = db.getAvailableRooms(roomSize);
-            String[] theRooms = new String[roomsForRent.size()];
-            int i = 0;
-            for (availableRoom rms:roomsForRent)
-            {
-                theRooms[i] = Integer.toString(rms.roomNumber);
-                i++;
-            }
-            String buildAString = "<html>";
-            for (i = 0; i < theRooms.length; i++)
-            {
-                buildAString = buildAString+theRooms[i]+"<br>";
-            }
-            buildAString = buildAString+"</html>";
-            viewAvailableRmLabel.setText(buildAString);
+            CheckAvailableRooms checkRoomsDisplay = new CheckAvailableRooms();
+            checkRoomsDisplay.setTitle("Available Rooms");
+            checkRoomsDisplay.setSize(800, 600);
+            checkRoomsDisplay.setVisible(true);
+			this.dispose();
         }
 
         // Add Client Button
