@@ -281,13 +281,27 @@ public class SQL_Connection
         return newItemID;
     }
 
+    // Assign customer to room
+    boolean assignCustomerToRoom(int roomNumber, int customerID)
+    {
+        boolean customerAssignedRoom = false;
+        String sqlStatement = "update room set customer_id = "+customerID+" where idroom = "+roomNumber;
+
+        try 
+        {
+            stmt.executeUpdate(sqlStatement);
+            customerAssignedRoom = true;
+        } 
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+        return customerAssignedRoom;
+    }
 
     // Connect to Database
     SQL_Connection()
     {
        connection = connectToDatabase();
-    }
-
-    
-    
+    }   
 }

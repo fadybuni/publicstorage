@@ -198,7 +198,14 @@ public class database
 
 
     // Assign customer to Room
+    // Inputs: Room Number (Integer) and Customer ID (Integer)
+    // Outputs: Customer has been added (boolean)
+    boolean assignCustomerToRoom(int roomNumber, int customerID)
+    {
+        boolean customerWasAdded = sql_connection.assignCustomerToRoom(roomNumber, customerID);
 
+        return customerWasAdded;
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////
 
