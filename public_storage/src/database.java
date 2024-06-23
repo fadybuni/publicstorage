@@ -172,6 +172,13 @@ public class database
     }
 
 
+    // These are the functions that still need to be completed
+    // ******************************************************************************************
+
+    // Check Available Rooms (Return a list of rooms that aren't assigned to a customer)
+
+    // Assign customer to Room
+
     //////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////
 

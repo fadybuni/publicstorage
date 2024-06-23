@@ -61,6 +61,7 @@ public class LoginPage implements ActionListener
 			mainPage.setTitle("Main Page");
 			mainPage.setSize(800, 600);
 			mainPage.setVisible(true);
+			this.frame.dispose();
       	}
 
 	}
