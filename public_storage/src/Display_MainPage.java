@@ -26,7 +26,6 @@ public class Display_MainPage extends Frame implements ActionListener
    
 	JLabel roomLabel = new JLabel("Room:");
 	JLabel itemLabel = new JLabel("Item:");
-  	JLabel customerIDLabel = new JLabel("Enter Customer ID: ");
   	JButton customerIDButton = new JButton("Get Customer Info");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,17 +62,11 @@ public class Display_MainPage extends Frame implements ActionListener
         ////////////// Fields ////////////////////////////////////
         itemField.setBounds(150, 100, 200, 25);
 
-        /////////////////////////////////////////////////////////////////////
-
-        ////////////// Labels ////////////////////////////////////
-        customerIDLabel.setBounds(50,25,150,25);
-
         roomLabel.setBounds(50, 50, 100, 25);
         itemLabel.setBounds(50, 100, 100, 25);
 
         // Add GUI items to Frame
         this.add(exitButton);
-        this.add(customerIDLabel);
         this.add(customerIDButton);
         this.add(addClientButton);
         this.add(assignRoomButton);
