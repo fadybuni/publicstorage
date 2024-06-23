@@ -57,6 +57,9 @@ public class LoginPage implements ActionListener
 		// Login Button	
 		if(e.getSource()==loginButton) 
 		{
+			database db = new database();
+			employee employeeLoggingIn = db.getEmployeeInfo(0);
+			//if (employeeLoggingIn.password = true)
 			MainPage mainPage = new MainPage();
 			mainPage.setTitle("Main Page");
 			mainPage.setSize(800, 600);
