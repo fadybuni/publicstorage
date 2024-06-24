@@ -28,22 +28,22 @@ public class Display_AddCustomer extends Frame implements ActionListener
         this.setLayout(null);
 
         // Exit Button
-        exitButton.setBounds(500, 200, 200, 25);
+        exitButton.setBounds(300, 125, 200, 25);
         exitButton.addActionListener(this);
 
         // Add Client Button
-        addClientButton.setBounds(150, 300, 100, 25);
+        addClientButton.setBounds(150, 250, 100, 25);
         addClientButton.addActionListener(this);
 
-        firstNameLabel.setBounds(50, 100, 100, 25);
-        lastNameLabel.setBounds(50, 150, 100, 25);
-        emailLabel.setBounds(50, 200, 100, 25);
-        phoneLabel.setBounds(50, 250, 100, 25);
+        firstNameLabel.setBounds(50, 50, 100, 25);
+        lastNameLabel.setBounds(50, 100, 100, 25);
+        emailLabel.setBounds(50, 150, 100, 25);
+        phoneLabel.setBounds(50, 200, 100, 25);
 
-        firstNameField.setBounds(150, 100, 100, 25);
-        lastNameField.setBounds(150, 150, 100, 25);
-        emailField.setBounds(150, 200, 100, 25);
-        phoneField.setBounds(150, 250, 100, 25);
+        firstNameField.setBounds(150, 50, 100, 25);
+        lastNameField.setBounds(150, 100, 100, 25);
+        emailField.setBounds(150, 150, 100, 25);
+        phoneField.setBounds(150, 200, 100, 25);
 
         this.add(exitButton);
         this.add(addClientButton);
@@ -76,7 +76,8 @@ public class Display_AddCustomer extends Frame implements ActionListener
 		{
             Display_MainPage mainPage = new Display_MainPage();
 			mainPage.setTitle("Main Page");
-			mainPage.setSize(800, 600);
+			mainPage.setSize(800, 300);
+            mainPage.setLocationRelativeTo(null);
 			mainPage.setVisible(true);
 			this.dispose();
 		}

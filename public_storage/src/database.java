@@ -100,6 +100,18 @@ public class database
             return customerInfromation;   
     }
 
+    // This function returns the room size
+    // Input: room number (integer)
+    // Output: room size (integer)
+    public int getRoomSize(int roomNumber)
+    {
+        int roomSize = 0;
+
+        roomSize = sql_connection.getRoomSize(roomNumber);
+        
+        return roomSize;
+    }
+
     // This function returns the room dimensions
     // Input: room size (integer)
     // Output: Class roomDimensions: width, depth, height (3 integers)

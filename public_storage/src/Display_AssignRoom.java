@@ -26,13 +26,13 @@ public class Display_AssignRoom extends Frame implements ActionListener
         exitButton.addActionListener(this);
 
          // Assign Button
-         assignRoomButton.setBounds(150, 150, 150, 25);
+         assignRoomButton.setBounds(150, 225, 150, 25);
          assignRoomButton.addActionListener(this);
 
-         customerIDLabel.setBounds(200, 400, 50, 25);
-         roomNumberLabel.setBounds(200, 450, 50, 25);
-         customerIDField.setBounds(250, 400, 50, 25);
-         roomNumberField.setBounds(250, 450, 50, 25);
+         customerIDLabel.setBounds(100, 125, 100, 25);
+         roomNumberLabel.setBounds(100, 175, 100, 25);
+         customerIDField.setBounds(200, 125, 100, 25);
+         roomNumberField.setBounds(200, 175, 100, 25);
 
 
          // Add GUI items to Frame
@@ -74,7 +74,8 @@ public class Display_AssignRoom extends Frame implements ActionListener
 		{
             Display_MainPage mainPage = new Display_MainPage();
 			mainPage.setTitle("Main Page");
-			mainPage.setSize(800, 600);
+			mainPage.setSize(800, 300);
+            mainPage.setLocationRelativeTo(null);
 			mainPage.setVisible(true);
 			this.dispose();
 		}

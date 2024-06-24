@@ -12,7 +12,7 @@ public class SQL_Connection
     {
         try
         {
-            Connection connection = DriverManager.getConnection(connectionUrl, "root", "MySQL");
+            Connection connection = DriverManager.getConnection(connectionUrl, "root", "mySQL");
             stmt = connection.createStatement();
         }
 
@@ -46,7 +46,7 @@ public class SQL_Connection
         catch (SQLException e)
         {
             e.printStackTrace();
-        }
+        } 
 
         
         return customerInfo;

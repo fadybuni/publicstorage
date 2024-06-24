@@ -11,7 +11,7 @@ public class Display_CheckAvailableRooms extends Frame implements ActionListener
     JButton exitButton = new JButton("Exit");
     JButton viewAvailableRoomButton = new JButton("View Available Rooms");
     JTextField viewAvailableRmSizeField = new JTextField();
-    JLabel viewAvailableRmLabel= new JLabel();
+    JLabel viewAvailableRmLabel= new JLabel("Enter Room Size: ");
     
     database db = new database();
 
@@ -20,18 +20,18 @@ public class Display_CheckAvailableRooms extends Frame implements ActionListener
         this.setLayout(null);
 
         // Exit Button
-        exitButton.setBounds(500, 200, 200, 25);
+        exitButton.setBounds(175, 175, 200, 25);
         exitButton.addActionListener(this);
 
         // View Room Button
-        viewAvailableRoomButton.setBounds(50, 400, 200, 25);
+        viewAvailableRoomButton.setBounds(250, 75, 200, 25);
         viewAvailableRoomButton.addActionListener(this);
 
         //View Rooms Field
-        viewAvailableRmSizeField.setBounds(300, 400, 25, 25);
+        viewAvailableRmSizeField.setBounds(215, 75, 25, 25);
 
         // View Rooms Label
-        viewAvailableRmLabel.setBounds(50, 450, 200, 125);
+        viewAvailableRmLabel.setBounds(100, 25, 100, 125);
 
         // Add GUI items to Frame
         this.add(viewAvailableRoomButton);
@@ -69,8 +69,9 @@ public class Display_CheckAvailableRooms extends Frame implements ActionListener
 		{
             Display_MainPage mainPage = new Display_MainPage();
 			mainPage.setTitle("Main Page");
-			mainPage.setSize(800, 600);
+			mainPage.setSize(800, 300);
 			mainPage.setVisible(true);
+            mainPage.setLocationRelativeTo(null);
 			this.dispose();
 		}
     }
